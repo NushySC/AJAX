@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX playground</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <h2>Students:</h2>
+    <ul id="students"></ul>
+
+    <script>
+        
+axios.get('https://classes.codingbootcamp.cz/api/attendance/coding-bootcamp/winter-2019/2019-02-28')
+                    //fetch('https://classes.codingbootcamp.cz/api/attendance/coding-bootcamp/winter-2019/2019-02-28')
+                    //.then(r => r.json())
+.then(data => {
+                    //for (let id in data.data) {
+        console.log(data);
+        for (oompahloopah in data.data.data) {
+        document.getElementById('students').innerHTML += `<li>${data.data.data[oompahloopah]}</li>`; 
+
+        ///console.log data to see structure and understand the data.data.data and the random i name
+        ///compare axios to fetch
+
+    }
+})
+    
+    </script>
+    
+</body>
+</html>
